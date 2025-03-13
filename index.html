@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estimate apartment renovation costs with our modular calculator tool">
+    <title>Apartment Renovation Cost Estimator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Apartment Renovation Cost Estimator</h1>
+    </header>
+    
+    <main>
+        <section class="calculator">
+            <form id="renovation-form">
+                <div class="form-group">
+                    <label for="square-meters">Apartment Size (m²)</label>
+                    <input type="number" id="square-meters" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bathrooms">Number of Bathrooms</label>
+                    <input type="number" id="bathrooms" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="toilets">Number of Toilets</label>
+                    <input type="number" id="toilets" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rooms">Number of Rooms</label>
+                    <input type="number" id="rooms" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Planning Services</legend>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="planning-yes" name="planning" value="yes">
+                                <label for="planning-yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="planning-no" name="planning" value="no" checked>
+                                <label for="planning-no">No</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Replace Windows</legend>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="windows-yes" name="windows" value="yes">
+                                <label for="windows-yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="windows-no" name="windows" value="no" checked>
+                                <label for="windows-no">No</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                
+                <div class="form-group">
+                    <fieldset>
+                        <legend>New Flooring</legend>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="flooring-yes" name="flooring" value="yes">
+                                <label for="flooring-yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="flooring-no" name="flooring" value="no" checked>
+                                <label for="flooring-no">No</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Quality Level</legend>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="quality-standard" name="quality" value="standard" checked>
+                                <label for="quality-standard">Standard</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="quality-luxury" name="quality" value="luxury">
+                                <label for="quality-luxury">Luxury (+€100 per m²)</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                
+                <button type="submit" class="btn-calculate">Calculate Estimate</button>
+            </form>
+        </section>
+        
+        <section class="results" id="results-section">
+            <h2>Renovation Estimate</h2>
+            <div class="result-card">
+                <div class="cost-summary">
+                    <p class="total-cost" id="total-cost">€0</p>
+                    <p class="cost-per-sqm" id="cost-per-sqm">€0 per m²</p>
+                </div>
+                
+                <div class="cost-breakdown" id="cost-breakdown">
+                    <h3>Cost Breakdown</h3>
+                    <ul id="breakdown-list">
+                        <!-- Breakdown items will be inserted here by JavaScript -->
+                    </ul>
+                </div>
+                
+                <div class="disclaimer">
+                    <p>This estimate is for reference only. Actual costs may vary based on specific requirements, materials, and local labor rates.</p>
+                </div>
+                
+                <button type="button" id="print-estimate" class="btn-secondary">Print Estimate</button>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Renovation Cost Estimator</p>
+    </footer>
+    
+    <script src="js/app.js"></script>
+</body>
+</html> 
